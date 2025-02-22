@@ -2,73 +2,53 @@
 
 Este é um projeto simples de API REST desenvolvido com Java e Spring Boot. Ele permite adicionar, listar e buscar usuários por ID.
 
-Tecnologias Utilizadas
+## Tecnologias Utilizadas
+- Java 17+
+- Spring Boot
+- Maven
 
-Java 17+
+## Como Rodar o Projeto
 
-Spring Boot
+### Pré-requisitos
+- Java 17+ instalado
+- Maven instalado
 
-Maven
-
-
-Como Rodar o Projeto
-
-Pré-requisitos
-
-Java 17+ instalado
-
-Maven instalado
-
-
-Passos
-
+### Passos
 1. Clone este repositório:
-
-git clone https://github.com/seu-usuario/springboot-simple-api.git
-
-
+   ```sh
+   git clone https://github.com/seu-usuario/springboot-simple-api.git
+   ```
 2. Navegue até a pasta do projeto:
-
-cd springboot-simple-api
-
-
+   ```sh
+   cd springboot-simple-api
+   ```
 3. Compile e execute o projeto com Maven:
+   ```sh
+   mvn spring-boot:run
+   ```
+4. A API estará disponível em `http://localhost:8080/users`
 
-mvn spring-boot:run
+## Endpoints
 
+### Adicionar um usuário
+**POST** `/users`
+- Parâmetros: `name` (String)
+- Exemplo de requisição:
+  ```sh
+  curl -X POST "http://localhost:8080/users?name=Joao"
+  ```
 
-4. A API estará disponível em http://localhost:8080/users
+### Listar todos os usuários
+**GET** `/users`
+- Exemplo de requisição:
+  ```sh
+  curl -X GET "http://localhost:8080/users"
+  ```
 
-
-
-Endpoints
-
-Adicionar um usuário
-
-POST /users
-
-Parâmetros: name (String)
-
-Exemplo de requisição:
-
-curl -X POST "http://localhost:8080/users?name=Joao"
-
-
-Listar todos os usuários
-
-GET /users
-
-Exemplo de requisição:
-
-curl -X GET "http://localhost:8080/users"
-
-
-Buscar um usuário por ID
-
-GET /users/{id}
-
-Exemplo de requisição:
-
-curl -X GET "http://localhost:8080/users/1"
-
+### Buscar um usuário por ID
+**GET** `/users/{id}`
+- Exemplo de requisição:
+  ```sh
+  curl -X GET "http://localhost:8080/users/1"
+  ```
 
